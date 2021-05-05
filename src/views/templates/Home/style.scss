@@ -1,0 +1,233 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+body::-webkit-scrollbar {
+   display: none;
+}
+.fontSize {
+  font-size: 50px;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+  .circle {
+    width: 100%;
+    height: 50%;
+    .container {
+      padding: 200px 0 0 0;
+      margin: 0 auto;
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .article {
+    position: relative;
+    color: #fff;
+    height: 50%;
+    h2 {
+      max-width: 50%;
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
+    p {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+    .arrow {
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      margin-top: 5rem;
+      position: relative;
+      bottom: 0px;
+      cursor: pointer;
+      &:hover {
+        margin-top: 6rem;
+        animation: moveArrow 0.75s cubic-bezier(1, 0, 0, 1) infinite;
+        // transition: all 0.25s cubic-bezier(1, 0, 0, 1);
+      }
+    }
+  }
+}
+
+.largeMenu {
+  display: block;
+}
+
+.smallMenu {
+  display: none;
+}
+
+.home {
+  overflow: auto; //这里overflow:scroll也可以
+  min-height: 480px;
+  min-width: 320px;
+  width: 100%;
+  .header {
+    margin: 0;
+    padding: 0;
+  }
+}
+.content {
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  top: 0px;
+  .banner {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: move;
+    // scroll-snap-type: y mandatory;
+    // -webkit-overflow-scrolling: touch;
+    &.asideItem {
+      top: -100%;
+      opacity: 0.9;
+      z-index: 2;
+      &.action-active {
+        // -webkit-animation: slider 5s ease-out infinite;
+        // animation: slider 5s ease-out infinite;
+        transition: all 1s cubic-bezier(.77,0,.175,1);
+        top: 0;
+      }
+      &.action-nactive {
+        // -webkit-animation: slider 5s ease-out infinite;
+        // animation: slider 5s ease-out infinite;
+        transition: all 1s cubic-bezier(.77,0,.175,1);
+        top: -200%;
+      }
+      // transition: top 5s ease .5s;  /*改变top值实现动画*/
+    }
+    &.mainItem {
+      top: -100%;
+      opacity: 0.9;
+      z-index: 2;
+      &.action-active {
+        // -webkit-animation: backSlider 5s ease-out infinite;
+        // animation: backSlider 5s ease-out infinite;
+        transition: all 1s cubic-bezier(.77,0,.175,1);
+        top: -200%;
+      }
+      &.action-nactive {
+        // -webkit-animation: slider 5s ease-out infinite;
+        // animation: slider 5s ease-out infinite;
+        transition: all 1s cubic-bezier(.77,0,.175,1);
+        top: 0%;
+      }
+      // transition: top 5s ease .5s;  /*改变top值实现动画*/
+    }
+    .aside-item {
+      position: relative;
+      width: 35%;
+      height: 100%;
+      // -webkit-animation: slider 5s ease-out infinite;
+      // animation: slider 5s ease-out infinite;
+      // position: absolute;
+      top: 0x;
+      // transition: top 0.3s cubic-bezier(.77, 0, .175, 1);
+      left: 0;
+      opacity: 1;
+      // transition: top 1s ease-out .5s;  /*改变top值实现动画*/
+      // scroll-snap-align: start;
+      list-style: none;
+      background-size: cover;
+      z-index: 3;
+      // &.hide{
+      //   top: 900px;
+      // }
+      &#color1 {
+        background-color: rgb(102, 147, 144);
+      }
+      &#color2 {
+        background-color: rgb(125, 104, 135);
+      }
+      &#color3 {
+        background-color: rgb(182, 114, 160);
+      }
+      &#color4 {
+        background-color: rgb(221, 167, 96);
+      }
+      &#color5 {
+        background-color: rgb(81, 156, 190);
+      }
+    }
+    .content-item {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      // scroll-snap-align: start;
+      list-style: none;
+      background-size: cover;
+      z-index: 1;
+      &#pic1 {
+        background: #fff url('https://picsum.photos/1920/1000/?image=101') center center fixed no-repeat;
+      }
+      &#pic2 {
+        background: #fff url('https://picsum.photos/1920/1000/?image=102') center center fixed no-repeat;
+      }
+      &#pic3 {
+        background: #fff url('https://picsum.photos/1920/1000/?image=103') center center fixed no-repeat;
+      }
+      &#pic4 {
+        background: #fff url('https://picsum.photos/1920/1000/?image=104') center center fixed no-repeat;
+      }
+      &#pic5 {
+        background: #fff url('https://picsum.photos/1920/1000/?image=106') center center fixed no-repeat;
+      }
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+ }
+
+@keyframes moveArrow {
+  0% {
+    margin-top: 5rem;
+  }
+  50% {
+    margin-top: 6rem;
+  }
+  100% {
+    margin-top: 5rem;
+  }
+}
+ 
+@keyframes backSlider {
+  0% {
+    top: 0%;
+  }
+  20% {
+    top: -100%;
+  }
+  80% {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+ 
+@keyframes slider {
+  0% {
+    top: -100%;
+  }
+  20% {
+    top: 0;
+  }
+  80% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
